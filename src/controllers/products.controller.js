@@ -22,7 +22,7 @@ export const getOne = (req, res) => {
 export const insertOne = (req, res) => {
     console.log(req.body)
     productDAO.insertOne(req.body)
-        .then(result => res.redirect('/api/products/'))
+        .then(result => res.redirect('/'))
         .catch(err => res.json({ status: "Server unavailable" }));
 };
 
@@ -32,7 +32,7 @@ export const updateOne = (req, res) => {
         .then(result => {
             !result ? res.json({
                 message: "Product not found "
-            }) : res.redirect('/api/products/');
+            }) : res.redirect('/');
         })
         .catch(err => res.json({ status: "Server unavailable" }));
 };
