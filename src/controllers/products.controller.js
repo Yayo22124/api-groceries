@@ -43,6 +43,6 @@ export const deleteOne = (req, res) => {
         .then(result => {
             !result ? res.json({
                 message: "Product not found "
-            }) : res.redirect('/api/products');
+            }) : res.redirect('/');
         }).catch(err => res.json({ status: "Server unavailable" }));
 };
